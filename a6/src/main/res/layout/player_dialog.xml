@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_round_rectangle_live"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mtv_itle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/live_black"
+        android:drawablePadding="@dimen/small"
+        android:padding="@dimen/small"
+        android:text="@string/live" />
+
+    <RelativeLayout
+        android:id="@+id/live_show"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#000">
+
+        <TextureView
+            android:id="@+id/media_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+
+
+        <TextView
+            android:id="@+id/player_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_cam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/switchcame"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small">
+
+        <ImageView
+            android:id="@+id/location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:src="@drawable/icon_starting" />
+
+        <TextView
+            android:id="@+id/tv_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/location"
+            android:text="@string/position"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_p"
+            android:layout_below="@id/tv_p"
+            android:text="@string/get_pos" />
+    </RelativeLayout>
+</LinearLayout>

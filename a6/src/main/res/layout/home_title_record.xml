@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 首页行车记录Title -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/btn_left"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/device"
+        android:textColor="@drawable/selector_font_black"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:text="@string/tab_phone_file"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/multiple"
+        android:textColor="@drawable/selector_font_black"
+        android:textSize="16sp"/>
+
+
+</RelativeLayout>

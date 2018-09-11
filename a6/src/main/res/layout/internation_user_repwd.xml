@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <!-- 重置密码title -->
+
+        <include layout="@layout/user_title" />
+
+        <!-- 手机号/重置密码 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:id="@+id/iv_center_flag"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:id="@+id/tab_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/iv_center_flag"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="@string/use_phone_login"
+                    android:textColor="@color/tab_color_darker"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tab_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/iv_center_flag"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="@string/email_account"
+                    android:textColor="@color/tab_color_lighter"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/tab_phone_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/tab_phone"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@+id/iv_center_flag"
+                    android:background="@color/tab_color_darker" />
+
+                <View
+                    android:id="@+id/tab_email_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/tab_email"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/iv_center_flag"
+                    android:background="@color/tab_color_lighter" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/confirmation_code"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/repwd_zone"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="AM + 374"
+                    android:textColor="#cc000000"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/user_repwd_phonenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/phone_account"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="#7f000000"
+                    android:textColorHint="@color/user_hint_text_color"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/confirmation_code"
+                android:gravity="left|center"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#7f000000"
+                android:textColorHint="@color/user_hint_text_color"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/user_repwd_ok_btn"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/next"
+                android:enabled="false"
+                android:text="@string/user_regist_btn"
+                android:textAllCaps="false"
+                android:textColor="#33000000" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

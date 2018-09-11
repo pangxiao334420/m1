@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "809409629513",
+    "firebase_url": "https://goluk-care-1496647444287.firebaseio.com",
+    "project_id": "goluk-care-1496647444287",
+    "storage_bucket": "goluk-care-1496647444287.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809409629513:android:df9ab2e7bf8fe477",
+        "android_client_info": {
+          "package_name": "com.goluk.ifound.m1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809409629513-v7j552hvu65f2u4esrbemg70krvbs87l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goluk.ifound.m1",
+            "certificate_hash": "70fbc2545da369416011abc86b85414916e9d3e7"
+          }
+        },
+        {
+          "client_id": "809409629513-bvoekokbkg05q3cppbaq959d31tgmsfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0FMoeA_CZi8sCg9KBwTM82uMp-H94Dyc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809409629513-b6ugquailnjsfg0ru6otffthdfsemosm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goluk.carei",
+                "app_store_id": "1245070345"
+              }
+            },
+            {
+              "client_id": "809409629513-bvoekokbkg05q3cppbaq959d31tgmsfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809409629513:android:423af5c753b071cf",
+        "android_client_info": {
+          "package_name": "com.goluk.ifound.m1.cn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809409629513-h9b3ln5fim89bki1t403r017kde9dvjt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goluk.ifound.m1.cn",
+            "certificate_hash": "70fbc2545da369416011abc86b85414916e9d3e7"
+          }
+        },
+        {
+          "client_id": "809409629513-bvoekokbkg05q3cppbaq959d31tgmsfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0FMoeA_CZi8sCg9KBwTM82uMp-H94Dyc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809409629513-b6ugquailnjsfg0ru6otffthdfsemosm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goluk.carei",
+                "app_store_id": "1245070345"
+              }
+            },
+            {
+              "client_id": "809409629513-bvoekokbkg05q3cppbaq959d31tgmsfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

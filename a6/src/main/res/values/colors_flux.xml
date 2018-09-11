@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_translat">#66000000</color>
+    <color name="font_gray">#5E656E</color>
+    <color name="flux_chart_gray">#CBCBCB</color>
+    <color name="chart_color_orange">#FE5E54</color>
+    <color name="gray_F9F9F9">#F9F9F9</color>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="text_color">#FF000000</color>
+    <color name="bg_transparent">#00000000</color>
+    <color name="bg_press">#FFC6C6C4</color>
+    <color name="bg">#313131</color>
+
+    <color name="grey">#808080</color>
+    <color name="blue">#1f77e5</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="photo_color">#1f77e5</color>
+
+    <drawable name="action_bar">@color/white</drawable>
+    <drawable name="bg_connect">#434343</drawable>
+
+    <color name="volume_stroke">#FFFF004B</color>
+    
+    <color name="process_b">#60FFFFFF</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color> 
+    
+    <color name="background">#82404040</color>
+
+    <color name="cameraview_controlbar_background">#313131</color>
+    <color name="cameraview_controlbar_background_translucent">#80313131</color>
+
+    <drawable name="btn_background_normal">#1f77e5</drawable>
+    <drawable name="btn_background_pressed">#8ab7ef</drawable>
+
+    <!-- 分享按钮背景 -->
+
+    <color name="light_gray">#FF303030</color>
+    <color name="gray">#FF909090</color>
+    <color name="sigview_line_color">#FFDDDDDD</color>
+
+
+    <!-- 按钮的背景颜色 -->
+
+    <!-- user部分颜色 -->
+    <color name="user_login_bg">#F1F1F2</color>
+    <color name="user_hint_text_color">#b2b2b2</color>
+    <color name="user_personal_black">#323232</color>
+    <color name="dialog_bg">#00000000</color>
+    <color name="user_personal_color">#000000</color>
+
+    <!-- user部分颜色 -->
+    <!-- 直接界面 -->
+    <!-- 说话中字体的颜色 -->
+
+    <color name="share_list_select">#047cf3</color>
+    <color name="caputre">#35bb80</color>
+
+    <!-- 友盟分享背景颜色 -->
+
+    <!-- 相册按钮文字颜色 -->
+
+    <!-- 行车记录仪设置颜色 -->
+    <color name="setting_right_text_color">#8e8e93</color>
+
+    <!-- 行车记录仪2.0 -->
+
+    <color name="color_bind_btn_txt">#047cf3</color>
+
+    <color name="tab_color_grey">#60ffffff</color>
+    <color name="tab_color_white">#ffffff</color>
+    <color name="tab_color_darker">#333333</color>
+    <color name="tab_color_lighter">#999999</color>
+    <color name="black">#000</color>
+
+    <color name="white_press">#E5E5E5</color>
+    <color name="bg_gray">#F7F9FA</color>
+    <color name="font_999">#999999</color>
+    <color name="font_3C">#3C3C3C</color>
+    <color name="font_edit_hint">#C7C7C7</color>
+    <color name="font_63">#636363</color>
+    <color name="font_A1">#A1A1A1</color>
+    <color name="font_96">#969696</color>
+    <color name="font_green">#52B77E</color>
+
+</resources>

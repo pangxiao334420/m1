@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_gray"
+              android:orientation="vertical">
+
+    <likly.view.repeat.RecyclerRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <likly.view.repeat.RepeatView
+            android:id="@+id/repeatView"
+            style="@style/RepeatView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/layout_no_event_video"
+            app:footerAdapterClass="com.goluk.a6.control.repeatview.LoadMoreFooterAdapter"
+            app:viewHolderClass="com.goluk.a6.control.ui.event.EventViewHolder"
+            app:viewHolderLayout="@layout/viewholder_event_video_item"/>
+
+    </likly.view.repeat.RecyclerRefreshLayout>
+
+</LinearLayout>

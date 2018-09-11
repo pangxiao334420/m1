@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/message_add"
+        android:icon="@drawable/collection"
+        android:showAsAction="always"
+        android:title="" />
+
+    <item
+        android:id="@+id/message_setting"
+        android:icon="@drawable/device_add"
+        android:showAsAction="always"
+        android:title="" />
+</menu>

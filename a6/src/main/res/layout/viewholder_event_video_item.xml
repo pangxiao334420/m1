@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 事件视频列表Item -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/selector_white"
+                android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_16"
+        android:paddingRight="@dimen/margin_16">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="@dimen/margin_16">
+
+            <TextView
+                android:id="@+id/tv_event_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/font_3C"
+                android:textSize="@dimen/font_16sp"
+                android:textStyle="bold"
+                tools:text="您的车辆发生了行车碰撞"/>
+
+            <TextView
+                android:id="@+id/tv_event_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_time"
+                android:layout_marginTop="@dimen/margin_16"
+                android:drawableLeft="@drawable/icon_abnormalparking"
+                android:drawablePadding="@dimen/margin_8"
+                android:textColor="@color/font_gray"
+                android:textSize="@dimen/font_14sp"
+                tools:text="行车紧急事件提醒"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/font_gray"
+                android:textSize="@dimen/font_14sp"
+                tools:text="5月23日 19:56"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_thumb"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/thumbnail_default"/>
+
+    </LinearLayout>
+
+    <View
+        style="@style/LineDivider"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/dvr_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/message_title_hint" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/urgnet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/press_selector2"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="#e4e4e4" />
+
+        <TextView
+            android:id="@+id/muterecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:text="@string/event_argent"
+            android:textSize="16sp" />
+
+
+        <Switch
+            android:id="@+id/switch_argent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:switchMinWidth="56dp"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e4e4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/mini"
+        android:gravity="center_vertical"
+        android:textColor="@color/font_999"
+        android:textSize="12sp"
+        android:text="@string/urgent_hint" />
+
+    <RelativeLayout
+        android:id="@+id/exception_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/press_selector2"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="#e4e4e4" />
+
+        <Switch
+            android:id="@+id/switch_exception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:switchMinWidth="56dp"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/switch_exception"
+            android:text="@string/exception_hint"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e4e4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/mini"
+        android:gravity="center_vertical"
+        android:textColor="@color/font_999"
+        android:textSize="12sp"
+        android:text="@string/exception_hint_1" />
+
+
+    <RelativeLayout
+        android:id="@+id/sync_video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/press_selector2"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="#e4e4e4" />
+
+        <Switch
+            android:id="@+id/switch_sync_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:switchMinWidth="56dp"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/switch_sync_video"
+            android:text="@string/sync_video_cloud"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e4e4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/mini"
+        android:gravity="center_vertical"
+        android:textColor="@color/font_999"
+        android:textSize="12sp"
+        android:text="@string/str_hint_gprs_used" />
+    <RelativeLayout
+        android:id="@+id/catch_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/press_selector2"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="#e4e4e4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/catch_message"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/catch_exception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:switchMinWidth="56dp"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e4e4"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/small"
+        android:text="@string/catch_hint"
+        android:visibility="gone" />
+
+</LinearLayout>

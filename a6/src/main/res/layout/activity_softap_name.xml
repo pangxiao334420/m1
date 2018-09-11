@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sigview_line_color"
+    android:orientation="vertical">
+
+    <View
+        style="@style/Divider"
+        android:layout_marginTop="@dimen/activity_horizontal_margin" />
+
+    <RelativeLayout
+        android:id="@+id/changewifi_password_layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="#f4f4f4">
+
+        <TextView
+            android:id="@+id/changewifi_password_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="21dp"
+            android:textColor="#3f3f3f"
+            android:text="@string/goluk_m_start"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="19dp"
+            android:layout_toRightOf="@id/changewifi_password_name_2"
+            android:gravity="left"
+            android:singleLine="true"
+            android:textColor="#3f3f3f"
+            android:textColorHint="@color/user_hint_text_color"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <View style="@style/Divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/change_wifi_hint"
+        android:textColor="@color/gray"
+        android:textSize="12sp"></TextView>
+</LinearLayout>

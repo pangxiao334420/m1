@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 事件视频列表Item -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_group"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/bg_gray"
+            android:gravity="bottom"
+            android:paddingLeft="@dimen/margin_16"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_17sp"
+            android:textStyle="bold"
+            tools:text="2017-03-07"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/bg_gray"
+            android:gravity="bottom"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingLeft="@dimen/margin_16"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14sp"
+            tools:text="09:50-09:56"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/selector_white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_mileage"
+                    android:drawablePadding="4dp"
+                    android:text="@string/mails"
+                    android:textColor="@color/font_63"
+                    android:textSize="@dimen/font_14sp"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8">
+
+                    <TextView
+                        android:id="@+id/tv_mileage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_20sp"
+                        tools:text="9.8"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_mileage"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@id/tv_mileage"
+                        android:text="@string/km"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_14sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_abnormalparking"
+                    android:drawablePadding="4dp"
+                    android:text="@string/time_count"
+                    android:textColor="@color/font_63"
+                    android:textSize="@dimen/font_14sp"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8">
+
+                    <TextView
+                        android:id="@+id/tv_total_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_20sp"
+                        tools:text="6"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_total_time"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@id/tv_total_time"
+                        android:text="@string/min"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_14sp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_averagespeed"
+                    android:drawablePadding="4dp"
+                    android:text="@string/avg_speed"
+                    android:textColor="@color/font_63"
+                    android:textSize="@dimen/font_14sp"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8">
+
+                    <TextView
+                        android:id="@+id/tv_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_20sp"
+                        tools:text="52"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_speed"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@id/tv_speed"
+                        android:text="@string/kmh"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_14sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        style="@style/LineDivider"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

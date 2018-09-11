@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 修改邮箱页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/user_login_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_common_title"/>
+
+    <likly.view.repeat.RecyclerRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <likly.view.repeat.RepeatView
+            android:id="@+id/repeatView"
+            style="@style/RepeatView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/layout_no_track_data"
+            app:footerAdapterClass="com.goluk.a6.control.repeatview.LoadMoreFooterAdapter"
+            app:viewHolderClass="com.goluk.a6.control.ui.track.TrackViewHolder"
+            app:viewHolderLayout="@layout/viewholder_track_item"/>
+
+    </likly.view.repeat.RecyclerRefreshLayout>
+
+
+</LinearLayout>

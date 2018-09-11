@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:icon="${APP_ICON}"
+        android:label="${APP_NAME}"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+
+        <service
+            android:name="com.tencent.android.tpush.rpc.XGRemoteService"
+            android:exported="true">
+            <intent-filter>
+                <!-- 【必须】 请修改为当前APP包名 .PUSH_ACTION, 如demo的包名为：com.qq.xgdemo -->
+                <action android:name="com.goluk.ifound.m1.cn.PUSH_ACTION" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.tencent.android.tpush.XGPushProvider"
+            android:authorities="com.goluk.ifound.m1.cn.AUTH_XGPUSH"
+            android:exported="true" />
+        <provider
+            android:name="com.tencent.android.tpush.SettingsContentProvider"
+            android:authorities="com.goluk.ifound.m1.cn.TPUSH_PROVIDER"
+            android:exported="false" />
+        <provider
+            android:name="com.tencent.mid.api.MidProvider"
+            android:authorities="com.goluk.ifound.m1.cn.TENCENT.MID.V3"
+            android:exported="true" />
+    </application>
+</manifest>

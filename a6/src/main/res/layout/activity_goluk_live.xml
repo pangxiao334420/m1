@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/live_root_view"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#66000000"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/shape_round_rectangle_live"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="36dp">
+
+            <TextView
+                android:id="@+id/mtv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/live_black"
+                android:drawablePadding="@dimen/small"
+                android:padding="@dimen/small"
+                android:text="@string/live"/>
+
+            <!-- 信号强度/网速 -->
+            <LinearLayout
+                android:id="@+id/layout_signal_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ic_signal_strength"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_network_00"/>
+
+                <TextView
+                    android:id="@+id/net_speed"
+                    android:layout_width="62dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:textColor="#248CCC"
+                    android:textSize="@dimen/font_14sp"
+                    tools:text="382KB/s"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/live_show"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:background="#000">
+
+            <RelativeLayout
+                android:id="@+id/media_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/iv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/anim_live_loading"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/player_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/iv_cam_switch"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:src="@drawable/switchcame"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/iv_display_fullscreen"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/fullscreen_video"/>
+
+            <ImageView
+                android:id="@+id/iv_exit_fullscreen"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/back_fullscreen"
+                android:visibility="gone"/>
+
+            <!-- 信号强度/网速 -->
+            <LinearLayout
+                android:id="@+id/layout_signal_info_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ic_signal_strength_fullscreen"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_network_00"/>
+
+                <TextView
+                    android:id="@+id/net_speed_fullscreen"
+                    android:layout_width="62dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:textColor="#248CCC"
+                    android:textSize="@dimen/font_14sp"
+                    tools:text="382KB/s"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rLayout_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/switch_cam"
+                    android:textColor="@color/white"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlayout_live_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small">
+
+            <ImageView
+                android:id="@+id/location"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_starting"/>
+
+            <TextView
+                android:id="@+id/tv_p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/location"
+                android:text="@string/position"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_p"
+                android:layout_below="@id/tv_p"
+                android:text="@string/get_pos"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

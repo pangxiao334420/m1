@@ -1,0 +1,200 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+task generateStrings(type: Exec) {
+    workingDir './'
+    commandLine "python", "excel2str.py"
+}
+//afterEvaluate {
+//    android.applicationVariants.all { variant ->
+//        variant.javaCompiler.dependsOn(generateStrings)
+//    }
+//    preBuild.dependsOn generateStrings
+//}
+android {
+    signingConfigs {
+        realse {
+            keyAlias 'key0'
+            keyPassword 'golukm1'
+            storeFile file('../m1international.jks')
+            storePassword 'golukm1'
+        }
+
+        debug {
+//            storeFile file('../debug.keystore')
+//            storePassword "android"
+//            keyAlias "androiddebugkey"
+//            keyPassword "android"
+            keyAlias 'key0'
+            keyPassword 'golukm1'
+            storeFile file('../m1international.jks')
+            storePassword 'golukm1'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "26.0.2"
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    defaultConfig {
+        applicationId "com.goluk.ifound.m1"
+        minSdkVersion 19
+        targetSdkVersion 25
+        multiDexEnabled true
+        manifestPlaceholders = [APP_NAME: "@string/app_m1_name", APP_ICON: "@mipmap/ic_launcher"]
+        resValue "string", "base_scheme", "https"
+        versionCode getCustomVersionCode()
+        versionName getCustomVersionName()
+        ndk {
+            abiFilters "armeabi"
+        }
+    }
+
+    //resValue priority: buildTypes overrides productFlavors
+    //https://developer.android.com/studio/build/build-variants.html
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.realse
+            resValue "string", "bugly_id", "5c75affbd1"
+        }
+        fortest {
+            //minifyEnabled true
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.debug
+            resValue "string", "bugly_id", "5c75affbd1"
+            resValue "string", "base_url", "test2bservice.goluk.cn"
+            resValue "string", "base_web_url", "test2bweb.goluk.cn"
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            resValue "string", "bugly_id", "56029f98e6"
+            resValue "string", "base_url", "test2bservice.goluk.cn"
+            resValue "string", "base_web_url", "test2bweb.goluk.cn"
+        }
+    }
+
+    flavorDimensions "m1"
+
+    productFlavors {
+        international {
+            buildConfigField 'Boolean', 'BRANCH_CHINA', 'false'
+            resValue "string", "server_flag", "/m1"
+            resValue "string", "base_url", "m1.goluk.cn"
+            resValue "string", "base_web_url", "m1web.goluk.cn"
+            resValue "string", "android_path_invitation", "/m1/invitation.html"
+            resValue "string", "xinge_id", "2100260165"
+            resValue "string", "xinge_key", "ARF86DJ3A88G"
+            dimension "m1"
+        }
+        china {
+            buildConfigField 'Boolean', 'BRANCH_CHINA', 'true'
+            resValue "string", "server_flag", "/m1c"
+            resValue "string", "base_url", "m1c.goluk.cn"
+            resValue "string", "base_web_url", "m1cweb.goluk.cn"
+            resValue "string", "android_path_invitation", "/m1c/invitation.html"
+            resValue "string", "xinge_id", "2100267216"
+            resValue "string", "xinge_key", "ABWXS9416A3P"
+            applicationIdSuffix ".cn"
+            dimension "m1"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dependencies {
+        compile files('libs/fastjson-1.1.46.android.jar')
+        compile files('libs/jg_filter_sdk_1.1.jar')
+        compile files('libs/libammsdk.jar')
+        compile files('libs/libksyplayer.jar')
+        compile files('libs/libksystat.jar')
+        compile files('libs/mediatool.jar')
+        compile files('libs/mid-core-sdk-3.7.2.jar')
+        compile files('libs/SocialSDK_facebook.jar')
+        chinaCompile files('libs/SocialSDK_WeChat_Simplify.jar')
+        compile files('libs/umeng_social_api.jar')
+        compile files('libs/umeng_social_net.jar')
+        compile files('libs/umeng_social_tool.jar')
+        compile files('libs/upload_1.1.3.332_4478.jar')
+        compile files('libs/weiboSDKCore_3.1.4.jar')
+        compile files('libs/wup-1.0.0-SNAPSHOT.jar')
+        compile files('libs/Xg_sdk_v3.1_20170417_0946.jar')
+        compile files('libs/zxing.jar')
+        chinaCompile files('libs/BaiduLBS_Android.jar')
+        implementation project(':pullToRefreshLibrary')
+        compile 'com.android.support:support-v13:25.3.1'
+        compile 'com.squareup.picasso:picasso:2.5.2'
+        compile 'com.aliyun.dpa:oss-android-sdk:2.3.0.1'
+        compile 'com.github.bumptech.glide:glide:3.7.0'
+        compile 'com.tonicartos:stickygridheaders:1.0.1'
+        compile 'com.android.support:multidex:1.0.1'
+        compile 'com.gelitenight.waveview:waveview:1.0.0'
+        compile 'com.android.support:appcompat-v7:25.3.1'
+        compile 'org.greenrobot:eventbus:3.0.0'
+        compile 'com.tencent.bugly:crashreport:latest.release'
+        compile 'com.android.volley:volley:1.0.0'
+        compile 'com.baoyz.swipemenulistview:library:1.3.0'
+        internationalCompile 'com.google.android.gms:play-services-maps:11.0.0'
+        compile 'com.android.support:support-v4:25.2.0'
+        compile 'com.orhanobut:logger:2.1.1'
+        compile 'org.java-websocket:Java-WebSocket:1.3.4'
+        compile 'com.github.NaikSoftware:StompProtocolAndroid:1.3.1'
+        compile 'com.github.apl-devs:appintro:v4.2.2'
+        // MPChart
+        chinaCompile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+        //fit window
+        compile 'com.jude:fitsystemwindowlayout:2.1.5'
+        //WeChat pay
+        chinaCompile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+        //Gson
+        compile 'com.google.code.gson:gson:2.8.2'
+        //rxJava
+        //    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.1.3'
+        //rxAndroid
+        compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
+        compile 'com.hmcx:mvp:1.0.3'
+        compile 'com.hmcx:rxandroid:1.0.6'
+        compile 'com.hmcx:dialogger:1.0.2'
+        compile 'com.hmcx:repeatview:1.0.8'
+        compile 'com.hmcx:dollar:1.0.1'
+//    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+        compile 'com.jakewharton:butterknife:8.5.1'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+        // Downloader
+        compile 'com.liulishuo.filedownloader:library:1.6.9'
+        // Permission
+        implementation 'pub.devrel:easypermissions:1.0.1'
+
+        internationalCompile 'com.google.firebase:firebase-core:11.0.0'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+def getCustomVersionCode() {
+    if (hasProperty("CustomVersionCode")) {
+        return CustomVersionCode.toInteger()
+    } else {
+        return 1
+    }
+}
+
+def getCustomVersionName() {
+    if (hasProperty("CustomVersionName")) {
+        return CustomVersionName
+    } else {
+        return "1.0"
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

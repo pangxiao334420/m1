@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/remote_file_fragmen_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/remote_file_capture"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/capture_file"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/remote_file_lock"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/lock_file" />
+
+        <RadioButton
+            android:id="@+id/remote_file_loop"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/loop_file" />
+
+        <RadioButton
+            android:id="@+id/remote_file_downloading"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/downloading_file"
+            android:visibility="gone" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/version_desc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/remote_file_fragmen_tab"
+        android:background="#e4e4e4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/version_desc">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_horizontal_margin">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/activity_main_swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.tonicartos.widget.stickygridheaders.StickyGridHeadersGridView
+                    android:id="@+id/remote_file_gridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:horizontalSpacing="0dip"
+                    android:numColumns="2"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="0dip" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/no_video"
+                    android:gravity="center"
+                    android:text="@string/no_remote_file"
+                    android:textColor="#999999"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/remote_file_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_operation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_heigh"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/phone_select"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/select_all"
+            android:gravity="center"
+            android:text="@string/select_all" />
+        <!-- 优化速度，取消批量下载-->
+        <TextView
+            android:id="@+id/tv_down"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/download"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/download_file" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_delete"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/delete_file" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/not_connect_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_connect_step1_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/not_connected_at_this_time"
+                        android:textColor="@color/gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/shape_connect"
+                android:text="@string/click_to_connect"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

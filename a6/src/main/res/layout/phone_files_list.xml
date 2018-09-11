@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/phone_file_fragmen_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/phone_file_capture"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/capture_file" />
+
+        <RadioButton
+            android:id="@+id/phone_file_lock"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/lock_file" />
+
+        <RadioButton
+            android:id="@+id/phone_file_loop"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/loop_file" />
+
+        <RadioButton
+            android:id="@+id/phone_file_edit"
+            style="@style/fragmen_tab"
+            android:drawableBottom="@drawable/fragment_tab_bottom_selector"
+            android:text="@string/edit_file" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e4e4e4"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/FileGridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/small">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/activity_main_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.tonicartos.widget.stickygridheaders.StickyGridHeadersGridView
+                android:id="@+id/gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:horizontalSpacing="0dip"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="0dip" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/phone_no_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/no_video"
+            android:text="@string/no_file"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tabpage="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/root_pager_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.goluk.a6.control.CarViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e4e4e4" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/navi_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_heigh"
+                android:orientation="horizontal">
+
+                <com.goluk.a6.control.TabPageView
+                    android:id="@+id/camera_preview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tabpage:tab_normal="@drawable/preview"
+                    tabpage:tab_select="@drawable/preview_ing"
+                    tabpage:tab_text="@string/my_car" />
+
+                <com.goluk.a6.control.TabPageView
+                    android:id="@+id/phone_files"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tabpage:tab_normal="@drawable/phone_files"
+                    tabpage:tab_select="@drawable/phone_files_ing"
+                    tabpage:tab_text="@string/phone_cling_title" />
+
+                <com.goluk.a6.control.TabPageView
+                    android:id="@+id/message"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tabpage:tab_normal="@drawable/message"
+                    tabpage:tab_select="@drawable/message_ing"
+                    tabpage:tab_text="@string/message" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <com.goluk.a6.control.TabPageView
+                        android:id="@+id/more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        tabpage:tab_normal="@drawable/tab_more"
+                        tabpage:tab_select="@drawable/tab_more_ing"
+                        tabpage:tab_text="@string/more" />
+
+                    <View
+                        android:id="@+id/v_new"
+                        style="@style/Dot"
+                        android:layout_alignRight="@+id/more"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_operation_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_heigh"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_down"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/select_all"
+                    android:gravity="center"
+                    android:text="@string/select_all" />
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/selector_delete"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="@string/delete_file" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/preview_cling"
+        layout="@layout/preview_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/car_cling"
+        layout="@layout/car_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/phone_cling"
+        layout="@layout/phone_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fragment_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.goluk.a6.control.dvr.QuickSettingFragment2
+                android:id="@+id/quick_setting_fragment2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            
+        </FrameLayout>
+    </FrameLayout>
+
+</FrameLayout>

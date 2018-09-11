@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 修改邮箱页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/user_login_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_common_title"/>
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="18dp"
+        android:text="@string/change_mail_hint"
+        android:textColor="@color/font_3C"
+        android:textSize="16sp"/>
+
+    <View
+        style="@style/LineDivider"/>
+
+    <EditText
+        android:id="@+id/edit_mail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:hint="@string/new_mail"
+        android:paddingLeft="20dp"
+        android:singleLine="true"
+        android:textColor="@color/font_3C"
+        android:textColorHint="@color/font_edit_hint"
+        android:textSize="16sp"/>
+
+    <View
+        style="@style/LineDivider"/>
+
+    <TextView
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/selector_red_btn"
+        android:clickable="true"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>

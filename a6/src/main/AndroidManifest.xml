@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.goluk.a6.control"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <!-- Google Maps API needs OpenGL ES 2.0. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".CarControlApplication"
+        android:icon="${APP_ICON}"
+        android:label="${APP_NAME}"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.goluk.a6.control.IntroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
+        <activity
+            android:name=".CarControlActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"></activity>
+        <activity
+            android:name=".FamilyAccpetActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data android:scheme="gcare" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <data
+                    android:host="@string/base_web_url"
+                    android:path="@string/android_path_invitation"
+                    android:scheme="@string/base_scheme" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WebviewActivity"
+            android:parentActivityName=".CarControlActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".CarPreviewActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".dvr.MapSelectActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".dvr.OSSLivingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.goluk.a6.common.map.MipcaActivityCapture"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".browser.PhotoActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".browser.VideoActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".dvr.CameraFullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".browser.RemoteFileActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".AppVersionActivity"
+            android:label="@string/about"
+            android:parentActivityName=".CarControlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SdActivity"
+            android:label="@string/sdcard"
+            android:parentActivityName=".CarControlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowLiveActivity"
+            android:parentActivityName=".FamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PasswordActivity"
+            android:parentActivityName=".CarControlActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Pass" />
+        <activity
+            android:name=".WiFiNameActivity"
+            android:parentActivityName=".CarControlActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Pass" />
+        <activity
+            android:name="com.goluk.a6.internation.login.InternationUserLoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.goluk.a6.internation.login.InternationUserRegistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.login.InternationalResetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.login.UserSelectCountryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.login.InternationUserIdentifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.UserPersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.UserPersonalNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.UserPersonalSignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.ImageClipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.login.InternationUserPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyMyLinkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyMyUsersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.a6.internation.UserSosActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DevicesActivity"
+            android:label="@string/device_manage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MessageActivity"
+            android:label="@string/device_manage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dvr.ApnManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dvr.DeviceSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".flux.FluxManagerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/FluxWindowTheme" />
+        <activity
+            android:name=".flux.FluxChargeH5Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.ifound.m1.cn.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.goluk.ifound.m1.cn.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="wxdb653fef59fb9646" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.umeng.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".live.GolukLiveActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/TranslucentTheme"
+           />
+        <activity
+            android:name=".FeatureSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TimeChooseListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ChangeMailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ChangePhoneActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ChangePwdActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.event.EventCollectionsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.event.EventDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.track.TrackListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.track.TrackDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 网络状态监听广播 -->
+        <receiver
+            android:name="com.goluk.a6.control.util.NetworkListener"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_AP_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 三方库组件 -->
+        <provider
+            android:name="com.umeng.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider138532610029955"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <receiver
+            android:name="com.tencent.android.tpush.XGPushReceiver"
+            android:process=":xg_service_v3">
+            <intent-filter android:priority="0x7fffffff">
+
+                <!-- 【必须】 信鸽SDK的内部广播 -->
+                <action android:name="com.tencent.android.tpush.action.SDK" />
+                <action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
+                <!-- 【必须】 系统广播：开屏和网络切换 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <!-- 【可选】 一些常用的系统广播，增强信鸽service的复活机会，请根据需要选择。当然，你也可以添加APP自定义的一些广播让启动service -->
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.goluk.a6.receiver.MessageReceiver$GolukClickNotificationReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.goluk.broadcast.m1" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.goluk.a6.receiver.MessageReceiver$GolukCancelAllNotificationReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.goluk.broadcast.m1.notification_cancelled" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.tencent.android.tpush.service.XGPushServiceV3"
+            android:exported="true"
+            android:persistent="true"
+            android:process=":xg_service_v3" />
+        <!-- 【必须】 提高service的存活率 -->
+        <service
+            android:name="com.tencent.android.tpush.service.XGDaemonService"
+            android:process=":xg_service_v3" />
+
+        <receiver
+            android:name="com.goluk.a6.receiver.MessageReceiver"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- 接收消息透传 -->
+                <action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />
+                <!-- 监听注册、反注册、设置/删除标签、通知被点击等处理结果 -->
+                <action android:name="com.tencent.android.tpush.action.FEEDBACK" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.tencent.android.tpush.XGPushActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="XG_V2_ACCESS_ID"
+            android:value="@string/xinge_id" />
+        <meta-data
+            android:name="XG_V2_ACCESS_KEY"
+            android:value="@string/xinge_key" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.goluk.a6.control.CarControlActivity" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="mobnote" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5934d0ec8630f506b7000d38" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="qblzLX7SNx8pTsQiqRnpuOz5opASD4Ab" />
+    </application>
+
+</manifest>

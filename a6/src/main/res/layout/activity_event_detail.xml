@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 事件视频详情页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_common_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 视频播放 -->
+        <RelativeLayout
+            android:id="@+id/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layout_player_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true">
+
+                <com.ksyun.media.player.KSYTextureView
+                    android:id="@+id/player"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#000000"/>
+
+                <View
+                    android:id="@+id/view_video_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/ic_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/anim_live_loading"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:id="@+id/ic_video_pause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/video"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tv_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14sp"/>
+
+            </RelativeLayout>
+
+            <!-- 信号强度/网速 -->
+            <LinearLayout
+                android:id="@+id/layout_signal_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ic_signal_strength"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_sim_0"/>
+
+                <TextView
+                    android:id="@+id/net_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14sp"
+                    tools:text="382KB/s"/>
+
+            </LinearLayout>
+
+            <!-- 前后切换 -->
+            <ImageView
+                android:id="@+id/ic_switch_camera"
+                android:layout_width="32dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:src="@drawable/switchcame"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <!-- 进度条 -->
+        <LinearLayout
+            android:id="@+id/layout_video_above"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/layout_player_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/margin_8"
+            android:paddingRight="@dimen/margin_8">
+
+            <TextView
+                android:id="@+id/current_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/font_gray"
+                android:textSize="@dimen/font_11sp"/>
+
+            <SeekBar
+                android:id="@+id/video_seekbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_weight="1"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="0dp"
+                android:progressDrawable="@drawable/po_seekbar"
+                android:thumb="@drawable/thumb"
+                android:thumbOffset="0dp"/>
+
+            <TextView
+                android:id="@+id/total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="00:00"
+                android:textColor="@color/font_gray"
+                android:textSize="@dimen/font_11sp"/>
+
+        </LinearLayout>
+
+        <!-- 位置信息 -->
+        <TextView
+            android:id="@+id/tv_adress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/ic_adress"
+            android:drawablePadding="@dimen/margin_4"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_8"
+            android:text="@string/get_pos"
+            android:textColor="@color/font_63"
+            android:textSize="@dimen/font_14sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- 地图View -->
+            <RelativeLayout
+                android:id="@+id/map_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </FrameLayout>
+
+        <!-- 底部按钮 -->
+        <LinearLayout
+            android:id="@+id/layout_bottom_options"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/btn_collect"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_white"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/ic_not_collected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/collection"
+                    android:drawablePadding="@dimen/margin_4"
+                    android:gravity="center"
+                    android:text="@string/message_list_my"
+                    android:textColor="@color/font_3C"
+                    android:textSize="@dimen/font_17sp"/>
+
+                <TextView
+                    android:id="@+id/ic_collected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/collected"
+                    android:drawablePadding="@dimen/margin_4"
+                    android:gravity="center"
+                    android:text="@string/save_event_cancel"
+                    android:textColor="@color/font_3C"
+                    android:textSize="@dimen/font_17sp"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_download"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_white"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/btn_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:clickable="false"
+                    android:drawableLeft="@drawable/selector_ic_download"
+                    android:drawablePadding="@dimen/margin_4"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="@string/download_file"
+                    android:textColor="@drawable/font_black_state"
+                    android:textSize="@dimen/font_17sp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

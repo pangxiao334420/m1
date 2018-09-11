@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 轨迹详情页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_common_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- 地图View -->
+            <RelativeLayout
+                android:id="@+id/map_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <!-- 里程/用时/速度 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_12"
+                android:background="@drawable/shape_gray_round_corner"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_12"
+                android:paddingLeft="@dimen/margin_10"
+                android:paddingRight="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_12">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tv_mileage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_mileage"
+                        android:drawablePadding="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_20sp"
+                        tools:text="9.8"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_mileage"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@id/tv_mileage"
+                        android:text="@string/km"
+                        android:textColor="@color/font_63"
+                        android:textSize="@dimen/font_14sp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_6">
+
+
+                    <TextView
+                        android:id="@+id/tv_total_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_abnormalparking"
+                        android:drawablePadding="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_20sp"
+                        tools:text="06:23"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_6">
+
+
+                    <TextView
+                        android:id="@+id/tv_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_averagespeed"
+                        android:drawablePadding="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_20sp"
+                        tools:text="52"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_speed"
+                        android:layout_marginLeft="4dp"
+                        android:layout_toRightOf="@id/tv_speed"
+                        android:text="@string/kmh"
+                        android:textColor="@color/font_63"
+                        android:textSize="@dimen/font_14sp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- 底部信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_8">
+
+            <View
+                style="@style/LineDivider"
+                android:layout_marginBottom="@dimen/margin_6"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_8">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_A1"
+                    android:textSize="@dimen/font_14sp"
+                    tools:text="2017年03月07日 星期二"/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_toRightOf="@id/tv_date"
+                    android:textColor="@color/font_A1"
+                    android:textSize="@dimen/font_14sp"
+                    tools:text="10:18-10:28"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/LineDividerMarginLeft"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_6"/>
+
+            <TextView
+                android:id="@+id/tv_address_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_6"
+                android:drawableLeft="@drawable/icon_starting"
+                android:drawablePadding="4dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14sp"
+                tools:text="朝阳区三里屯西五街"/>
+
+            <TextView
+                android:id="@+id/tv_address_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_6"
+                android:drawableLeft="@drawable/pos_end"
+                android:drawablePadding="4dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14sp"
+                tools:text="朝阳区新源西路东街社区"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
